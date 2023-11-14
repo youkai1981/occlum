@@ -27,7 +27,7 @@ Now that we have installed the required Python libraries in the Alpine Docker im
 
 Step 3 (on the host): Copy the `import_alpine_python.sh` script from Occlum container to host,
 ```
-docker cp "<occlum_container_name>":/root/demos/python/import_alpine_python.sh <host_dir>
+docker cp "<occlum_container_name>":/root/demos/python/occlum_musl/import_alpine_python.sh <host_dir>
 ```
 and import the rootfs of Alpine Linux Docker image to the Occlum container (`/root/alpine_python`)
 ```
@@ -36,6 +36,7 @@ and import the rootfs of Alpine Linux Docker image to the Occlum container (`/ro
 
 Step 4 (in the Occlum container): Run the sample code on Occlum via
 ```
+cd /root/demos/python/occlum_musl/
 ./run_python_on_occlum.sh
 ```
 It will process CSV data files and generate a file (`smvlight.dat`) in `./occlum_instance`.
